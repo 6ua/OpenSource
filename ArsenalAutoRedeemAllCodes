@@ -1,0 +1,51 @@
+local A_1 = "unusualbias"
+local Event = game:GetService("ReplicatedStorage").Redeem
+Event:InvokeServer(A_1)
+wait(0.2)
+local A_1 = "POG"
+local Event = game:GetService("ReplicatedStorage").Redeem
+Event:InvokeServer(A_1)
+wait(0.2)
+local A_1 = "BLOXY"
+local Event = game:GetService("ReplicatedStorage").Redeem
+Event:InvokeServer(A_1)
+wait(0.2)
+local A_1 = "Bandites"
+local Event = game:GetService("ReplicatedStorage").Redeem
+Event:InvokeServer(A_1)
+wait(0.2)
+local A_1 = "EPRIKA"
+local Event = game:GetService("ReplicatedStorage").Redeem
+Event:InvokeServer(A_1)
+wait(0.2)
+local A_1 = "FLAMINGO"
+local Event = game:GetService("ReplicatedStorage").Redeem
+Event:InvokeServer(A_1)
+wait(0.2)
+local A_1 = "JOHN"
+local Event = game:GetService("ReplicatedStorage").Redeem
+Event:InvokeServer(A_1)
+wait(0.2)
+local A_1 = "KITTEN"
+local Event = game:GetService("ReplicatedStorage").Redeem
+Event:InvokeServer(A_1)
+wait(0.2)
+local A_1 = "PET"
+local Event = game:GetService("ReplicatedStorage").Redeem
+Event:InvokeServer(A_1)
+wait(0.2)
+local A_1 = "ANNA"
+local Event = game:GetService("ReplicatedStorage").Redeem
+Event:InvokeServer(A_1)
+wait(0.2)
+local A_1 = "F00LISH"
+local Event = game:GetService("ReplicatedStorage").Redeem
+Event:InvokeServer(A_1)
+wait(0.2)
+local A_1 = "CBROX"
+local Event = game:GetService("ReplicatedStorage").Redeem
+Event:InvokeServer(A_1)
+wait(0.2)
+local A_1 = "POKE"
+local Event = game:GetService("ReplicatedStorage").Redeem
+Event:InvokeServer(A_1)
