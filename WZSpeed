@@ -1,0 +1,11 @@
+while wait(Speed) do
+    local mob = getNearestMob();
+
+    if (mob and Player.Character and Player.Character.PrimaryPart) then
+        for i,v in next, Classes[ClassGUI.Value] do
+            Combat.AttackTargets({"Hi Wally!"}, {mob}, {Player.Character.PrimaryPart.Position}, v);
+            game:GetService("RunService").Heartbeat:wait();
+        end;
+    end;
+end;
+    end
