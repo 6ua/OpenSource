@@ -1,0 +1,64 @@
+local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+   wait(1)
+   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+
+do
+	local ui = game:GetService("CoreGui"):FindFirstChild("Venyx")
+	if ui then
+		ui:Destroy()
+	end
+end
+
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
+local venyx = library.new("Lua X | Lifting Titans", 5013109572)
+
+local Page1 = venyx:addPage("Auto-Farm", 5012544693)
+local Section1 = Page1:addSection("Auto Farm")
+
+Section1:addToggle("Auto Strength", nil, function(value)
+_G.AutoStrength = value
+while _G.AutoStrength do wait()
+game:GetService("ReplicatedStorage").Remotes.OnLift:FireServer()
+end
+	print("Toggled", value)
+end)
+
+Section1:addToggle("Auto Sell", nil, function(value)
+AutoSell = value
+while AutoSell do wait()
+game:GetService("ReplicatedStorage").Remotes.Sell:FireServer("Sell")	
+end
+print("Toggled", value)
+end)
+
+local Page3 = venyx:addPage("Auto Egg", 5012544693)
+local Section3 = Page3:addSection("Auto Eggs")
+
+local Eggs = {}
+for i,v in pairs(game:GetService("Workspace").EggFolder:GetChildren()) do
+    table.insert(Eggs, v.Name)
+end
+
+Section3:addDropdown("Select Egg", Eggs, function(t)
+SelectedEgg = t
+end)
+
+Section3:addToggle("Auto Hatch", nil, function(value)
+AutoHatch = value
+while AutoHatch do wait()
+game:GetService("ReplicatedStorage").Remotes.HatchEgg:InvokeServer(SelectedEgg, 1)
+end
+print("Toggled", value)
+end)
+
+Section3:addToggle("Auto Triple Hatch", nil, function(value)
+TripleHatch = value
+while TripleHatch do wait()
+	game:GetService("ReplicatedStorage").Remotes.HatchEgg:InvokeServer(SelectedEgg, 3)
+end
+print("Toggled", value)
+end)
+
