@@ -13,7 +13,7 @@ do
 end
 
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
-local venyx = library.new("Lua X | Lifting Titans", 5013109572)
+local venyx = library.new("Void | Lifting Titans", 5013109572)
 
 local Page1 = venyx:addPage("Auto-Farm", 5012544693)
 local Section1 = Page1:addSection("Auto Farm")
@@ -26,10 +26,20 @@ end
 	print("Toggled", value)
 end)
 
+local SellOptions =
+{
+	"Sell",
+	"SellSkulls"
+}
+
+Section1:addDropdown("Select Sell Option", SellOptions, function(t)
+	SelectedSellOption = t
+	end)
+
 Section1:addToggle("Auto Sell", nil, function(value)
 AutoSell = value
 while AutoSell do wait()
-game:GetService("ReplicatedStorage").Remotes.Sell:FireServer("Sell")	
+game:GetService("ReplicatedStorage").Remotes.Sell:FireServer(SelectedSellOption)	
 end
 print("Toggled", value)
 end)
@@ -62,3 +72,20 @@ end
 print("Toggled", value)
 end)
 
+local Page4 = venyx:addPage("MISC", 5012544693)
+local Section4 = Page4:addSection("Teleportion")
+
+local Zones = {}
+for i,v in pairs(game:GetService("Workspace").Zones:GetChildren()) do
+    table.insert(Zones, v.Name)
+end
+
+Section4:addDropdown("Select Zone", Zones, function(t)
+SelectedZone = t
+end)
+	
+
+Section4:addButton("Teleport To Zone", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(SelectedZone)
+	print("Clicked")
+end)
