@@ -109,12 +109,6 @@ AutoFarmSection:addToggle(
             Event:FireServer(A_1)
 
             game:GetService("ReplicatedStorage").fileMade:FireServer()
-
-for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Minigames:GetDescendants()) do
-        if v.ClassName == "ImageButton" then
-            firesignal(v.MouseButton1Click)
-                end
-            end
         end
         print("Toggled", value)
     end
